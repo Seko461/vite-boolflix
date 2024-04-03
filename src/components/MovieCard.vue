@@ -40,7 +40,7 @@ export default {
             <div class="row">
                 <div class="col">
                     <div class="card">
-
+                        <img v-if="movie.poster_path" :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`">
                         <div>
                             <h1>Titolo: {{ movie.title }}</h1>
                             <h3>Titolo originale: {{ movie.original_title }}</h3>

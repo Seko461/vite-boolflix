@@ -40,7 +40,8 @@ export default {
             <div class="row">
                 <div class="col" v-for="tv in state.series  ">
                     <div class="card">
-
+                        <img v-if="tv.poster_path" :src="`https://image.tmdb.org/t/p/w342/${tv.poster_path}`"
+                            class="serie-poster">
                         <div>
                             <h1>Titolo: {{ tv.name }}</h1>
                             <h3>Titolo originale: {{ tv.original_name }}</h3>
