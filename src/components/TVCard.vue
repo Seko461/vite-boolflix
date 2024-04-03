@@ -46,7 +46,9 @@ export default {
                             <h1>Titolo: {{ tv.name }}</h1>
                             <h3>Titolo originale: {{ tv.original_name }}</h3>
                             <h3>Lingua: <span :class="`fi fi-${getFlagCode(tv.original_language)}`"></span></h3>
-                            <h3>Voto: {{ tv.vote_average }}</h3>
+                            <h3>Voto: <i v-for="n in 5" :key="n" class="fa-star"
+                                    :class="{ 'fa-solid': n <= Math.round(tv.vote_average / 2), 'fa-regular': n > Math.round(tv.vote_average / 2) }"
+                                    style="color: #ffff00;"></i></h3>
 
                         </div>
                     </div>
