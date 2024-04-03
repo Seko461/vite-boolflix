@@ -13,31 +13,31 @@ export default {
         }
     },
     methods: {
-        searchCharacter() {
-            console.log('searching..' + this.searchText);
-            this.state.fetchCharacter(`https://rickandmortyapi.com/api/character?name=${this.searchText}`)
+        searchMovie() {
+            console.log(this.searchText);
+            this.state.fetchMovies(`https://api.themoviedb.org/3/search/movie?query=${this.searchText}&api_key=fb4b99f70827322e7a475cfea2c111cc`)
         },
 
     },
     mounted() {
         console.log(this.state);
-        this.state.getCharacters(this.state.characters_api_url)
+        this.state.getMovies(this.state.movies_api_url)
     }
 }
 </script>
 <template>
     <div class="search-box">
         <input type="text" v-model="searchText">
-        <button @click="searchCharacter">Cerca</button>
+        <button @click="searchMovie">Cerca</button>
     </div>
-    <section class="characters">
+    <section class="movies">
         <div class="container">
             <div class="row">
-                <div class="col" v-for="character in state.characters">
+                <div class="col" v-for="movie in state.movies">
                     <div class="card">
-                        <img :src="character.image" alt="">
+
                         <div>
-                            {{ character.name }}
+                            <h1> {{ movie.title }}</h1>
                         </div>
                     </div>
                 </div>
