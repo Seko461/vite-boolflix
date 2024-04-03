@@ -18,10 +18,10 @@ export default {
                     <div class="card">
 
                         <div>
-                            <h1> {{ movie.title }}</h1>
-                            <h3>{{ movie.original_title }}</h3>
-                            <h3>{{ movie.original_language }}</h3>
-                            <h3>{{ movie.vote_average }}</h3>
+                            <h1>Titolo: {{ movie.title }}</h1>
+                            <h3>Titolo originale: {{ movie.original_title }}</h3>
+                            <h3>Lingua: {{ movie.original_language }}</h3>
+                            <h3>Voto: {{ movie.vote_average }}</h3>
                         </div>
                     </div>
                 </div>
@@ -29,4 +29,11 @@ export default {
         </div>
     </section>
 </template>
-<style></style>
+<style>
+.card {
+    border: 1px solid black;
+    border-radius: 1rem;
+    background-color: bisque;
+    padding: 0 1rem;
+}
+</style>
