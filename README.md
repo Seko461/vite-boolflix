@@ -6,3 +6,5 @@ Creare un layout base con una searchbar (una input e un button) in cui possiamo 
 2. TitoloOriginale 
 3. Lingua
 4. Voto
+Milestone 2:
+Trasformiamo la stringa statica della lingua in una vera e propria bandiera della nazione corrispondente, gestendo il caso in cui non abbiamo la bandiera della nazione ritornata dall’API (le flag non ci sono in FontAwesome).

@@ -25,4 +25,5 @@ export const state = reactive({
                 this.movies = response.data.results
             })
     },
+
 })

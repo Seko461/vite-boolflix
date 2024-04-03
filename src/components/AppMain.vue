@@ -1,6 +1,7 @@
 <script>
 import MovieCard from './MovieCard.vue';
 import { state } from '../state.js';
+import axios from 'axios';
 
 export default {
     name: 'AppMain',
@@ -20,6 +21,7 @@ export default {
             console.log(this.searchText);
             this.state.fetchMovies(`https://api.themoviedb.org/3/search/movie?query=${this.searchText}&api_key=fb4b99f70827322e7a475cfea2c111cc`)
         },
+
 
     },
     mounted() {
