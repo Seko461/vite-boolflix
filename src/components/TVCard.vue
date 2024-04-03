@@ -4,8 +4,8 @@ import { state } from '../state';
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default {
-    name: 'MovieCard',
-    props: ['movie'],
+    name: 'TVCard',
+    props: ['tv'],
     data() {
         return {
             state,
@@ -35,17 +35,18 @@ export default {
 }
 </script>
 <template>
-    <section class="movies">
+    <section class="series">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col" v-for="tv in state.series  ">
                     <div class="card">
 
                         <div>
-                            <h1>Titolo: {{ movie.title }}</h1>
-                            <h3>Titolo originale: {{ movie.original_title }}</h3>
-                            <h3>Lingua: <span :class="`fi fi-${getFlagCode(movie.original_language)}`"></span></h3>
-                            <h3>Voto: {{ movie.vote_average }}</h3>
+                            <h1>Titolo: {{ tv.name }}</h1>
+                            <h3>Titolo originale: {{ tv.original_name }}</h3>
+                            <h3>Lingua: <span :class="`fi fi-${getFlagCode(tv.original_language)}`"></span></h3>
+                            <h3>Voto: {{ tv.vote_average }}</h3>
+
                         </div>
                     </div>
                 </div>
@@ -53,11 +54,11 @@ export default {
         </div>
     </section>
 </template>
-<style>
+<style scoped>
 .card {
     border: 1px solid black;
     border-radius: 1rem;
-    background-color: bisque;
+    background-color: rgb(255, 140, 0);
     padding: 0 1rem;
 }
 </style>

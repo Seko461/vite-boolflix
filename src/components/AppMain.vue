@@ -1,13 +1,15 @@
 <script>
 import MovieCard from './MovieCard.vue';
+import TVCard from './TVCard.vue';
 import { state } from '../state.js';
-import axios from 'axios';
+
 
 export default {
     name: 'AppMain',
     props: ['movie'],
     components: {
-        MovieCard
+        MovieCard,
+        TVCard
     },
     data() {
         return {
@@ -18,8 +20,11 @@ export default {
     },
     methods: {
         searchMovie() {
+            state.movies = [];
+            state.series = [];
             console.log(this.searchText);
-            this.state.fetchMovies(`https://api.themoviedb.org/3/search/movie?query=${this.searchText}&api_key=fb4b99f70827322e7a475cfea2c111cc`)
+            this.state.fetchMovies(`https://api.themoviedb.org/3/search/movie?query=${this.searchText}&api_key=fb4b99f70827322e7a475cfea2c111cc`);
+            this.state.fetchSeries(`https://api.themoviedb.org/3/search/tv?query=${this.searchText}&api_key=fb4b99f70827322e7a475cfea2c111cc`)
         },
 
 
@@ -27,6 +32,7 @@ export default {
     mounted() {
         console.log(this.state);
         this.state.getMovies(this.state.movies_api_url)
+        this.state.getSeries(this.state.series_api_url)
     }
 }
 </script>
@@ -36,5 +42,6 @@ export default {
         <button @click="searchMovie">Cerca</button>
     </div>
     <MovieCard :movie="movie" :key="movie.id" v-for="movie in state.movies" />
+    <TVCard :tv="tv" :key="tv.id" v-for="tv in state.series" />
 </template>
 <style></style>

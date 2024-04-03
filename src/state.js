@@ -4,7 +4,9 @@ import axios from "axios";
 export const state = reactive({
     message: 'this is a test message',
     movies: [],
+    series: [],
     movies_api_url: 'https://api.themoviedb.org/3/search/movie?api_key=fb4b99f70827322e7a475cfea2c111cc',
+    series_api_url: 'https://api.themoviedb.org/3/search/tv?api_key=fb4b99f70827322e7a475cfea2c111cc',
 
 
 
@@ -25,5 +27,23 @@ export const state = reactive({
                 this.movies = response.data.results
             })
     },
+    getSeries(url) {
+        axios.get(url)
+            .then(response => {
+                console.log(response.data);
+                this.series = response.data
+            })
+            .catch(err => {
+                console.error(err.message);
+            })
+    },
+    fetchSeries(url) {
+        axios.get(url)
+            .then(response => {
+                console.log(response.data.results);
+                this.series = response.data.results
+            })
+    },
+
 
 })
