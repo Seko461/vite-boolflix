@@ -32,6 +32,8 @@ nav {
     align-items: center;
     background-color: black;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
 
     >img {
@@ -56,6 +58,10 @@ nav {
         border: none;
         transform: translateY(.25rem);
 
+    }
+
+    >button:hover {
+        cursor: pointer;
     }
 }
 </style>
