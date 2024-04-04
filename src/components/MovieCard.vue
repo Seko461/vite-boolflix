@@ -39,7 +39,7 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="card">
+                    <div class="card" v-if="state.movies.length > 0">
                         <img v-if="movie.poster_path" :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`">
                         <div>
                             <h1>Titolo: {{ movie.title }}</h1>
@@ -50,6 +50,7 @@ export default {
                                     style="color: #ffff00;"></i></h3>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

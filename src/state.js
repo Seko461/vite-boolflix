@@ -2,10 +2,11 @@ import { reactive } from "vue";
 import axios from "axios";
 
 export const state = reactive({
-    message: 'this is a test message',
-    apiKey: 'fb4b99f70827322e7a475cfea2c111cc',
+
+    api_Key: 'fb4b99f70827322e7a475cfea2c111cc',
     movies: [],
     series: [],
+    searchText: '',
     movies_api_url: 'https://api.themoviedb.org/3/search/movie?api_key=fb4b99f70827322e7a475cfea2c111cc',
     series_api_url: 'https://api.themoviedb.org/3/search/tv?api_key=fb4b99f70827322e7a475cfea2c111cc',
     image_api_url: 'https://image.tmdb.org/t/p/w342',
@@ -45,6 +46,8 @@ export const state = reactive({
                 this.series = response.data.results
             })
     },
+
+
 
 
 })

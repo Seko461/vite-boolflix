@@ -39,7 +39,7 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col" v-for="tv in state.series  ">
-                    <div class="card">
+                    <div class="card" v-if="state.movies.length > 0">
                         <img v-if="tv.poster_path" :src="`https://image.tmdb.org/t/p/w342/${tv.poster_path}`"
                             class="serie-poster">
                         <div>
