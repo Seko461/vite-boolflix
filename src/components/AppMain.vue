@@ -1,7 +1,7 @@
 <script>
 import MovieCard from './MovieCard.vue';
 import TVCard from './TVCard.vue';
-import Slider from './Slider.vue';
+
 import { state } from '../state.js';
 
 
@@ -10,7 +10,7 @@ export default {
     components: {
         MovieCard,
         TVCard,
-        Slider,
+
     },
     data() {
         return {
@@ -27,8 +27,25 @@ export default {
 }
 </script>
 <template>
-    <Slider />
-    <MovieCard :movie="movie" :key="movie.id" v-for="movie in state.movies" />
-    <TVCard :tv="tv" :key="tv.id" v-for="tv in state.series" />
+    <main>
+        <div class="movies">
+            <MovieCard :movie="movie" :key="movie.id" v-for="movie in state.movies" />
+        </div>
+        <div class="series">
+            <TVCard :tv="tv" :key="tv.id" v-for="tv in state.series" />
+        </div>
+    </main>
 </template>
-<style scoped></style>
+<style scoped>
+main {
+    margin-top: 5rem;
+
+    .movies {
+        display: flex;
+    }
+
+    .series {
+        display: flex;
+    }
+}
+</style>
