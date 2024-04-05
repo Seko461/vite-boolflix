@@ -39,13 +39,19 @@ export default {
 <style scoped>
 main {
     margin-top: 5rem;
+    padding: 0 2rem;
 
     .movies {
         display: flex;
+
     }
 
     .series {
         display: flex;
     }
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 </style>

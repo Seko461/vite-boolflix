@@ -18,7 +18,7 @@ export const state = reactive({
     getMovies(url) {
         axios.get(url)
             .then(response => {
-                // console.log(response.data);
+                console.log(response.data);
                 this.movies = response.data
             })
             .catch(err => {
@@ -28,14 +28,14 @@ export const state = reactive({
     fetchMovies(url) {
         axios.get(url)
             .then(response => {
-                // console.log(response.data.results);
+                console.log(response.data.results);
                 this.movies = response.data.results
             })
     },
     getSeries(url) {
         axios.get(url)
             .then(response => {
-                // console.log(response.data);
+                console.log(response.data);
                 this.series = response.data
             })
             .catch(err => {
@@ -45,7 +45,7 @@ export const state = reactive({
     fetchSeries(url) {
         axios.get(url)
             .then(response => {
-                // console.log(response.data.results);
+                console.log(response.data.results);
                 this.series = response.data.results
             })
     },

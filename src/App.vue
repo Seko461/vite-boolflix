@@ -51,5 +51,11 @@ export default {
 
 body {
   background-color: black;
+  overflow: auto;
+
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 </style>
